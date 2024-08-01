@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: swiggy-app
+  namespace: default  # Add this line to specify the namespace
   labels:
     app: swiggy-app
 spec:
@@ -18,6 +19,7 @@ spec:
       containers:
       - name: swiggy-app
         image: manikonduru/swiggy-app:latest
-        imagePullPolicy: "Always"
+        imagePullPolicy: Always
         ports:
         - containerPort: 3000
+
